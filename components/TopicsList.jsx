@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const getTopics = async () => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/topics`,{
+    const res = await fetch(`https://crud-nine-tau.vercel.app/api/topics`,{
       cache: "no-store",
     });
 
