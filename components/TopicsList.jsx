@@ -105,7 +105,7 @@ export default function TopicsList() {
           ) : (
             <tr>
               <td colSpan="6" className="border p-3 text-center">
-                No matching topics found
+                No items found
               </td>
             </tr>
           )}
