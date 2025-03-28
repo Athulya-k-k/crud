@@ -7,7 +7,9 @@ import Link from "next/link";
 
 const getTopics = async () => {
   try {
-    const res = await fetch(`https://crud-nine-tau.vercel.app/api/topics`,{
+      const res = await fetch(`https://crud-nine-tau.vercel.app/api/topics`,{
+    // const res = await fetch('http://localhost:3000/api/topics', { 
+
       cache: "no-store",
     });
 
@@ -44,12 +46,13 @@ export default function TopicsList() {
     } else {
       const lowerQuery = query.toLowerCase();
       const filtered = topics.filter((t) =>
-        t.title.toLowerCase().includes(lowerQuery)
+        t.title.toLowerCase().includes(lowerQuery) ||
+        t.subtitle.toLowerCase().includes(lowerQuery) ||
+        t.author.toLowerCase().includes(lowerQuery)
       );
       setFilteredTopics(filtered);
     }
   };
-
   // 🗑 Remove topic from both lists after deletion
   const handleDelete = (id) => {
     const updatedTopics = topics.filter((t) => t._id !== id);
