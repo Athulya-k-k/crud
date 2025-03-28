@@ -7,7 +7,7 @@ export default function RemoveBtn({ id, onDelete }) {
     if (!confirm("Are you sure you want to delete this topic?")) return;
 
     try {
-      const res = await fetch(`process.env.NEXT_PUBLIC_API_URL + /api/topics?id=${id}`, {
+      const res = await fetch(`https://crud-nine-tau.vercel.app/api/topics/?id=${id}`, {
         method: "DELETE",
       });
 

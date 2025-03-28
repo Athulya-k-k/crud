@@ -16,7 +16,7 @@ export default function EditTopicForm({ id, title, description, subtitle, author
     e.preventDefault();
 
     try {
-      const res = await fetch(`process.env.NEXT_PUBLIC_API_URL + /api/topics/${id}`, {
+      const res = await fetch(`https://crud-nine-tau.vercel.app/api/topics/${id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",
